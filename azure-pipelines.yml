@@ -6,4 +6,13 @@ pool:
 
 steps:
   - script: echo "This is testing"
+  - bash: echo $(PipelineLevelvariable)
+  - bash: echo $(Build.BuildId)
+  - bash: echo $(Build.BuildNumber)
+  - bash: echo $(Build.SourceBranchName)
+  - bash: echo $(Build.SourcesDirectory)
+  - bash: echo $(Build.SourceVersion)
+
+
+
 
