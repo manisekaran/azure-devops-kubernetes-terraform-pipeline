@@ -12,6 +12,20 @@ steps:
   - bash: echo $(Build.SourceBranchName)
   - bash: echo $(Build.SourcesDirectory)
   - bash: echo $(Build.SourceVersion)
+  - bash: echo $(Build.ArtifactStagingDirectory)
+  - bash: java -version
+  - bash: npm -version
+  - bash: maven -version
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(System.DefaultWorkingDirectory)'
+      Contents: '**/*.yaml'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  - bash: ls -R $(Build.ArtifactStagingDirectory)
+
+  
+
+
 
 
 
