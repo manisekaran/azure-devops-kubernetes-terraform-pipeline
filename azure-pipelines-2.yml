@@ -27,13 +27,6 @@ stages:
         deploy:
          steps:
            - script: echo " deploy to QA"
-- stage: ProdDeploy
-  jobs:
-    - deployment: ProdDeployment
-      environment: Prod
-      strategy:
-      dependsOn: QA
-      continueOnError: 
 
   
 
